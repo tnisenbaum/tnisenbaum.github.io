@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    </style>
+    <title>Python</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Python</h1>
+    <h2>GFF3 Parser</h2>
+    GFF3 files are nine-column, tab-delimited, plain text files used for sequence annotations. I wrote a GFF3 feature exporter that takes in four arguments corresponding to values in the GFF3 columns. Below is an example of how to run the script on the command line, which reads the path to a GFF3 file and finds any feature type (column 3: type) with a specified ID (column 9: attributes). Then, the script identifies the sequence coordinates associated with the specified input (columns 4: start, 5: end, and 7: strand) and prints the FASTA sequence as 60 characters per line, which follows the standard.  Below are example outputs using the genome annotation file for Saccharomyces cerevisiae S288C (Saccharomyces_cerevisiae_S288C.annotation.gff)
