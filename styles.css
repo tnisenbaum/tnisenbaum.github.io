@@ -1,5 +1,6 @@
 body {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     font-family: Arial, Helvetica, sans-serif;
     color: darkblue;
   }
@@ -10,9 +11,30 @@ body {
 =======
   font-family: Arial, Helvetica, sans-serif;
   color: darkblue;
+=======
+  font-family: Arial, Helvetica, sans-serif;
+>>>>>>> Stashed changes
 }
 
 h1 {
   text-align: center;
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
+  color: cornflowerblue;
+}
+
+#sectionTitle {
+  background-color: cornflowerblue;
+}
+
+#sectionTitle h2 {
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  color: cornflowerblue;
 }
 >>>>>>> Stashed changes
