@@ -1,21 +1,22 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 25px 300px 75px 300px;
 }
 
 h1 {
   text-align: center;
-  color: cornflowerblue;
+  color: #569cd6;
 }
 
-#sectionTitle {
-  background-color: cornflowerblue;
+/* #sectionTitle {
+  background-color: #569cd6;
 }
 
 #sectionTitle h2 {
   color: white;
   text-align: center;
-}
+} */
 
-h3 {
-  color: cornflowerblue;
+h2, h3 {
+  color: #569cd6;
 }
