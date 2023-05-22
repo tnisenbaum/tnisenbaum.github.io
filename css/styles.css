@@ -1,6 +1,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: aliceblue;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: justify;
 }
 
 h1,h2 {
