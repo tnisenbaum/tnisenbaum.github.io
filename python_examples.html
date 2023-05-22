@@ -12,24 +12,36 @@
     <h1>Python</h1>
     <hr>
     <h2>GFF3 Parser</h2>
-    <p>GFF3 files are nine-column, tab-delimited, plain text files used for sequence annotations. I wrote a GFF3 feature exporter that takes in four arguments corresponding to values in the GFF3 columns. Below is an example of how to run the script on the command line, which reads the path to a GFF3 file and finds any feature type (column 3: type) with a specified ID (column 9: attributes). Then, the script identifies the sequence coordinates associated with the specified input (columns 4: start, 5: end, and 7: strand) and prints the FASTA sequence as 60 characters per line, which follows the standard.  Below are example outputs using the genome annotation file for Saccharomyces cerevisiae S288C (Saccharomyces_cerevisiae_S288C.annotation.gff)</p>
+    <p>GFF3 files are nine-column, tab-delimited, plain text files used for sequence annotations. I wrote a GFF3 feature exporter that takes in four arguments corresponding to values in the GFF3 columns. Below is an example of how to run the script on the command line, which reads the path to a GFF3 file and finds any feature type (column 3: type) with a specified ID (column 9: attributes). Then, the script identifies the sequence coordinates associated with the specified input (columns 4: start, 5: end, and 7: strand) and prints the FASTA sequence as 60 characters per line, which follows the standard.  Below are example outputs using the genome annotation file for <i>Saccharomyces cerevisiae S288C</i> (Saccharomyces_cerevisiae_S288C.annotation.gff)</p>
 
     <p><strong>Example Output 1:</strong> FASTA sequence of the gene with an ID of YAR003W</p>
-    <img src="imgs/img1.png" width="580" height="350">
+    <img src="imgs/gff3_img1.png" width="580" height="350">
 
     <p><strong>Example Output 2:</strong> FASTA sequence of a repeat region with an ID of TEL01L-TR</p>
-    <img src="imgs/img2.png" width="580" height="76">
+    <img src="imgs/gff3_img2.png" width="580" height="76">
 
     <p><strong>Example Output 3:</strong> Output if the input value is not in the file</p>
-    <img src="imgs/img3.png" width="580" height="70">
+    <img src="imgs/gff3_img3.png" width="580" height="70">
 
     <p><strong>Example Output 4:</strong> Output if the file contains duplicated values</p>
-    <img src="imgs/img4.png" width="580" height="150">
+    <img src="imgs/gff3_img4.png" width="580" height="150">
+
+    <p>More information about the GFF3 format can be found<a href="https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md">here.</a></p>
 
 
    <h2>BLASTN File Parser</h2> 
 <p>I wrote a program that opens a BLASTN (nucleotide to nucleotide search) output file, parses out specific information, and produces a formatted output. The output displays information about the query sequence ID and query length, then it parses information about the significant alignments for this query and displays the first ten hits containing accession information, length, and score.</p>
 
+<p><strong>Output:</strong></p>
+<img src="imgs/blastn_img1.png" width="580" height="200">
+
+<h2>Conversion of a GFF3 File to a BED File</h2>
+<p>I wrote a Python script that transforms the gene features of a GFF3 formatted file to BED format.</p>
+  <p>The example below uses the GFF3 file of the <i>Saccharomyces cerevisiae S288C</i> genome, which contains a total of 384 genes.</p>
+ <p>Output printed to the console, as shown below, and written to <i>yeast.bed</i> file including chrom, chromStart, chromEnd, name, score, and strand.</p>
+ <img src="imgs/gff2bed_img1.png" width="580" height="650" >
+
+ <p>Specifications for BED format can be found<a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format">here.</a></p>
 
 </body>
 </html>
