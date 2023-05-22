@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    </style>
+    <title>Python</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>SQL</h1>
+    <hr>
+    <h2>Database Schema and Table Creation</h2>
+    <p>I designed a simple database schema to store information about organisms and their genes using MySQL database. Specifically, it contains the genus, species, and taxon ID for any given organism and accommodates all genes for each of the organisms, storing the accession, gene product name, and gene symbol for each. The database was populated with the appropriate data from the following NCBI accessions: CBG36883, CBG32879, CBG33788, ADZ50581, ADZ50584, and ADZ49168.</p>
+
+    <img src="imgs/sql_img1.png" width="580" height="250">
+    <img src="imgs/sql_img2.png" width="580" height="90">
+
+    <p>Organism table: <strong><i>orgs</strong></i> </p>
+    <img src="imgs/sql_img3.png" width="580" height="180">
+
+    <p>Genes table: <strong><i>genes</strong></i> </p>
+    <img src="imgs/sql_img4.png" width="580" height="180">
+    <img src="imgs/sql_img5.png" width="580" height="220">
+
+
+    <p>Junction table using foreign keys from<strong><i> orgs</strong></i> and<strong><i> genes</strong></i> </p>
+    <img src="imgs/sql_img6.png" width="580" height="200">
+
+    <p>Result:</p>
+    <img src="imgs/sql_img7.png" width="580" height="180">
+  
+</body>
+</html>
