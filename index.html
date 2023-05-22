@@ -5,54 +5,75 @@
     </style>
     <title>Bioinformatics Portfolio</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  ></script>
+  <script type="text/javascript" src="js/pages.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
   </head>
 <!DOCTYPE html>
 <html>
   <body>
     <h1>BIOINFORMATICS PORTFOLIO</h1>
-    <div id="sectionTitle">
+
+    <div class="flex">
+
+        <div class="main_tabs">
+            <ul class="tabs">
+                <li id="python_examples">
+                  <a href="python_examples.html">Python</a>
+                </li>
+                <li id="SQL_examples">
+                  <a href="sql_examples.html">SQL</a>
+                </li>
+              </ul>
+        </div>
+
+    <div class="intro">
 
         <h2>Introduction</h2>
 
-    </div>
+        <p>
+            Hello, and welcome to my bioinformatics portfolio. I am a highly motivated
+            bioinformatics professional with a passion for solving complex biological
+            problems using computational methods.
+          </p>
+          <p>
+            I am currently completing my master’s degree in Biotechnology with a
+            concentration in Bioinformatics from Johns Hopkins University. Throughout
+            my studies, I have gained experience in various areas of bioinformatics,
+            including genomics, transcriptomics, and proteomics.
+          </p>
+          <p>
+            My portfolio highlights my skills and expertise in bioinformatics,
+            featuring projects and code snippets that demonstrate my ability to
+            analyze, interpret, and visualize biological data. In addition, my
+            portfolio includes examples of my proficiency in software development, as
+            I have designed and implemented various bioinformatics tools and pipelines
+            using programming languages such as Python, R, and SQL. I have also worked
+            on several projects that involve the integration of multiple data types,
+            including RNA-seq and ChIP-seq, and am experienced in using various
+            bioinformatics databases and tools, including NCBI, Ensembl, and UCSC
+            Genome Browser.
+          </p>
+          <p>
+            Overall, my bioinformatics portfolio is a testament to my dedication and
+            passion for bioinformatics, demonstrating my eagerness to continue
+            developing my skills and knowledge in the field. I am excited about the
+            opportunities to collaborate with others in the field and contribute to
+            advancing our understanding of the complex biological systems around us.
+          </p>
+          <p>Thank you for taking the time to review my portfolio.</p>
+    
 
-    <p>
-      Hello, and welcome to my bioinformatics portfolio. I am a highly motivated
-      bioinformatics professional with a passion for solving complex biological
-      problems using computational methods.
-    </p>
-    <p>
-      I am currently completing my master’s degree in Biotechnology with a
-      concentration in Bioinformatics from Johns Hopkins University. Throughout
-      my studies, I have gained experience in various areas of bioinformatics,
-      including genomics, transcriptomics, and proteomics.
-    </p>
-    <p>
-      My portfolio highlights my skills and expertise in bioinformatics,
-      featuring projects and code snippets that demonstrate my ability to
-      analyze, interpret, and visualize biological data. In addition, my
-      portfolio includes examples of my proficiency in software development, as
-      I have designed and implemented various bioinformatics tools and pipelines
-      using programming languages such as Python, R, and SQL. I have also worked
-      on several projects that involve the integration of multiple data types,
-      including RNA-seq and ChIP-seq, and am experienced in using various
-      bioinformatics databases and tools, including NCBI, Ensembl, and UCSC
-      Genome Browser.
-    </p>
-    <p>
-      Overall, my bioinformatics portfolio is a testament to my dedication and
-      passion for bioinformatics, demonstrating my eagerness to continue
-      developing my skills and knowledge in the field. I am excited about the
-      opportunities to collaborate with others in the field and contribute to
-      advancing our understanding of the complex biological systems around us.
-    </p>
-    <p>Thank you for taking the time to review my portfolio.</p>
-
-    <div id="sectionTitle">
 
     <h2>Skills Summary</h2>
-
-    </div>
     
     <h3>Programming Languages</h3>
     <p>
@@ -107,6 +128,7 @@
       Velvet, BWA, Bowtie2, HISAT, FreeBayes, MACS2, Stringtie, DESeq2,
       BEDtools, SAMtools, GATK, SnpEff, ANNOVAR, TopHat, Cufflinks
     </p>
-    <h1></h1>
+    </div>
+</div>
   </body>
 </html>
