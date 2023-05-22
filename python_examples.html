@@ -10,5 +10,26 @@
 <html>
   <body>
     <h1>Python</h1>
+    <hr>
     <h2>GFF3 Parser</h2>
-    GFF3 files are nine-column, tab-delimited, plain text files used for sequence annotations. I wrote a GFF3 feature exporter that takes in four arguments corresponding to values in the GFF3 columns. Below is an example of how to run the script on the command line, which reads the path to a GFF3 file and finds any feature type (column 3: type) with a specified ID (column 9: attributes). Then, the script identifies the sequence coordinates associated with the specified input (columns 4: start, 5: end, and 7: strand) and prints the FASTA sequence as 60 characters per line, which follows the standard.  Below are example outputs using the genome annotation file for Saccharomyces cerevisiae S288C (Saccharomyces_cerevisiae_S288C.annotation.gff)
+    <p>GFF3 files are nine-column, tab-delimited, plain text files used for sequence annotations. I wrote a GFF3 feature exporter that takes in four arguments corresponding to values in the GFF3 columns. Below is an example of how to run the script on the command line, which reads the path to a GFF3 file and finds any feature type (column 3: type) with a specified ID (column 9: attributes). Then, the script identifies the sequence coordinates associated with the specified input (columns 4: start, 5: end, and 7: strand) and prints the FASTA sequence as 60 characters per line, which follows the standard.  Below are example outputs using the genome annotation file for Saccharomyces cerevisiae S288C (Saccharomyces_cerevisiae_S288C.annotation.gff)</p>
+
+    <p><strong>Example Output 1:</strong> FASTA sequence of the gene with an ID of YAR003W</p>
+    <img src="imgs/img1.png" width="580" height="350">
+
+    <p><strong>Example Output 2:</strong> FASTA sequence of a repeat region with an ID of TEL01L-TR</p>
+    <img src="imgs/img2.png" width="580" height="76">
+
+    <p><strong>Example Output 3:</strong> Output if the input value is not in the file</p>
+    <img src="imgs/img3.png" width="580" height="70">
+
+    <p><strong>Example Output 4:</strong> Output if the file contains duplicated values</p>
+    <img src="imgs/img4.png" width="580" height="150">
+
+
+   <h2>BLASTN File Parser</h2> 
+<p>I wrote a program that opens a BLASTN (nucleotide to nucleotide search) output file, parses out specific information, and produces a formatted output. The output displays information about the query sequence ID and query length, then it parses information about the significant alignments for this query and displays the first ten hits containing accession information, length, and score.</p>
+
+
+</body>
+</html>
