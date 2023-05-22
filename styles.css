@@ -1,4 +1,5 @@
 body {
+<<<<<<< Updated upstream
     font-family: Arial, Helvetica, sans-serif;
     color: darkblue;
   }
@@ -6,3 +7,12 @@ body {
   h1 {
     text-align: center;
   }
+=======
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkblue;
+}
+
+h1 {
+  text-align: center;
+}
+>>>>>>> Stashed changes
