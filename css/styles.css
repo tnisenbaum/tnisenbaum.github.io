@@ -56,7 +56,8 @@ ul {
 .pythonEx,
 .sqlEx,
 .rEx,
-.cgiEx{
+.cgiEx,
+.genomeEx{
   margin: auto;
   width: 60%;
   padding: 10px;
