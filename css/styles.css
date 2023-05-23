@@ -8,6 +8,10 @@ h1,h2 {
   color: #569cd6;
 }
 
+h3{
+  text-align: center;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -58,8 +62,20 @@ ul {
   padding: 10px;
 }
 
+.cgiEx {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: justify;
+}
+
 
 img {
     width: 100%;
     height: auto;
+}
+
+pre {
+  white-space: pre-line;
+  margin: -5px;
 }
