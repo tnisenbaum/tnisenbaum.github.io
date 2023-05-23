@@ -30,10 +30,9 @@ a:active {
   font-weight: bold;
 }
 
-h4{
+#name{
   color:gray;
 }
-
 
 
 ul {
@@ -56,19 +55,17 @@ ul {
 .main_tabs,
 .pythonEx,
 .sqlEx,
-.rEx{
+.rEx,
+.cgiEx{
   margin: auto;
   width: 60%;
   padding: 10px;
 }
 
-.cgiEx {
-  margin: auto;
-  width: 60%;
-  padding: 10px;
+
+#justify {
   text-align: justify;
 }
-
 
 img {
     width: 100%;
@@ -78,4 +75,14 @@ img {
 pre {
   white-space: pre-line;
   margin: -5px;
+}
+
+code {
+  border: solid 1px rgb(44, 62, 180);
+  padding: 3px;
+}
+
+em {
+  color: gray;
+  font-size: smaller;
 }
