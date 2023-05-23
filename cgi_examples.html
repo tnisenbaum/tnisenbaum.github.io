@@ -122,12 +122,51 @@
 
                     <p>Output: <b>AB011549_seq.glimmer</b></p>
 
+                    <h4>Summary</h4>
+
+                    <p id="justify">The GenBank annotation for the Escherichia coli O157:H7 str. Sakai plasmid pO157 contained records for 83 genes, 2 of which were not provided CDS locations. Glimmer3 predicted 107 genes. Overall, Glimmer3 predicted 51 genes matching both 5&#39;UTR and 3&#39;UTR locations and 23 genes matching only the 3&#39;UTR location as annotated by GenBank. There were no predictions matching only the 5&#39;UTR location.</p>
+                    <p id="justify">A total of 9 genes did not match Glimmer3 predictions. Given CDS locations were not provided for two genes in the GenBank annotation, 92% of GenBank genes had at least one matching region with the genes predicted by Glimmer3. In addition to matching CDS locations, 3 GenBank genes also had overlapping regions with genes predicted by Glimmer. Summary tables of the 3 reference genes with matches and overlapping regions are included below.</p>
+                    <p id="justify">A total of 33 additional genes were predicted by Glimmer3 that did not match the GenBank reference annotation. Only 69% of the genes predicted by Glimmer3 had at least one matching location to the reference annotation. Given 3 had overlapping regions with reference genes, 72% of all genes predicted by Glimmer had at least one matching region or overlapping region.</p>
+
+                    <p>References:</p>
+                    <ol>
+                        <li>Delcher, A. L., Bratke, K. A., Powers, E. C., & Salzberg, S. L. (2007). Identifying bacterial genes and endosymbiont DNA with Glimmer. Bioinformatics (Oxford, England), 23(6), 673&#150;679.<a href="https://doi.org/10.1093/bioinformatics/btm009">https://doi.org/10.1093/bioinformatics/btm009</a></li>
+                        <li>Salzberg, S. L., Delcher, A. L., Kasif, S., & White, O. (1998). Microbial gene identification using interpolated Markov models. Nucleic acids research, 26(2), 544&#150;548.<a href="https://doi.org/10.1093/nar/26.2.544">https://doi.org/10.1093/nar/26.2.544</a></li>
+                        <li>Delcher, A. L. (2006, May 9). Glimmer Release Notes Version 3.02. Retrieved from <a href="https://ccb.jhu.edu/software/glimmer/glim302notes.pdf">https://ccb.jhu.edu/software/glimmer/glim302notes.pdf</a></li>
+
+                    </ol>
 
 
+                    <h2>MySQL, HTML Template</h2>
+                    <h3>Gene Product Search</h3>
 
-                    
-                    
-             
+                    <p id="justify">Using Python CGI programming, I&#39;ve connected to a SQL database to query results based on user input from an HTML form. The HTML form allows users to enter a search term, which will be used to query the database in the CGI script.</p>
+
+                    CGI script:
+                    <img src="imgs/cgi_img9.png">
+                    <br/><br/>
+                    <img src="imgs/cgi_img10.png">
+                    <img src="imgs/cgi_img11.png">
+
+
+                    <h2>MySQL, Javascript, and JQuery</h2>
+                    <h3>Gene Product Search</h3>
+                    <p id="justify">The script above was replicated using Javascript and JQuery for client-side interaction, implementing the JQuery autocomplete functionality. The CGI script processes the results and returns them in a JSON structure, which is parsed by Javascript.</p>
+
+                    <img src="imgs/cgi_img12.png">
+                    <img src="imgs/cgi_img13.png">
+
+                    <h3>Analysis of Genes Associated with Cancer: Variant Association and Drug Interactions</h3>
+
+                    <p>This tool utilizes two publicly available datasets: <br/><br/>
+                    <a href="https://www.disgenet.org/"> DIsGeNET:</a> A publicly available database of genes and variants associated with human diseases <br/>
+                    <a href="https://www.dgidb.org/"> Drug-Gene Interaction Database (DGIdb):</a> a drug-gene interaction database open-source tool to generate data on genes, variants, disease attributes, and drug-gene interactions </p>
+
+                    <p>The home page of the tool allows users to choose between searching for <b>Variant Associations</b> or <b>Drug Interactions</b>.</p>
+
+                    <img src="imgs/cgi_img14.png">
+
+
 
 
 
