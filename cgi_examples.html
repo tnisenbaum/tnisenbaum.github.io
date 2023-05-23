@@ -3,27 +3,26 @@
   <head>
     <meta charset="utf-8" />
     </style>
-    <title>Python</title>
+    <title>Python CGI</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <!DOCTYPE html>
 <html>
   <body>
-    <h4>THAIS NISENBAUM</h4>
+    <h4 id="name">THAIS NISENBAUM</h4>
     <div class="cgiEx">
         <h1>Python Computer Gateway Interface (CGI) Programming</h1>
         <hr>
         <h2>HTML Template</h2>
         <h3>GenBank Reference Annotation vs. Glimmer3</h3>
-        <p>Glimmer was used to predict the genes of a plasmid of the model organism <i>Escherichia coli</i> O157:H7 str. Sakai plasmid pO157 DNA, and the results were then compared with the annotations from GenBank. A CGI script was used to read both the GenBank (reference) annotation and predicted output from Glimmer, and the results were populated in an HTML5-compliant template.</p>
-            <p>The output includes summary information at the top, including the count of genes in the reference annotation, the count of predicted genes, the count of genes with exact matching coordinates between reference and prediction (5' and 3' agreement), the count of genes with 5' agreement but 3' disagreement, the count of genes with 5' disagreement but 3' agreement, and the count of genes predicted with no overlap to a reference gene. Additionally, a table is displayed showing all gene coordinates of the reference annotation and the corresponding (overlapping) predicted coordinates. Attributes of 'agrees' or 'disagrees’ are applied when compared to the reference coordinates, and a consensus field is generated.</p>
+        <p id="justify">Glimmer was used to predict the genes of a plasmid of the model organism <i>Escherichia coli</i> O157:H7 str. Sakai plasmid pO157 DNA, and the results were then compared with the annotations from GenBank. A CGI script was used to read both the GenBank (reference) annotation and predicted output from Glimmer, and the results were populated in an HTML5-compliant template.</p>
+            <p id="justify">The output includes summary information at the top, including the count of genes in the reference annotation, the count of predicted genes, the count of genes with exact matching coordinates between reference and prediction (5&#39; and 3&#39; agreement), the count of genes with 5&#39; agreement but 3&#39; disagreement, the count of genes with 5&#39; disagreement but 3&#39; agreement, and the count of genes predicted with no overlap to a reference gene. Additionally, a table is displayed showing all gene coordinates of the reference annotation and the corresponding (overlapping) predicted coordinates. Attributes of &#39;agrees&#39; or &#39;disagrees&#39; are applied when compared to the reference coordinates, and a consensus field is generated.</p>
 
             <i>Escherichia coli</i> O157:H7 str. Sakai plasmid pO157 DNA, complete sequence: <a href="https://www.ncbi.nlm.nih.gov/nuccore/AB011549.2">AB011549.2</a>
 
             <img src="imgs/cgi_img1.png">
 
-            <p>Glimmer (Gene Locator and Interpolated Markov ModelER) is a Unix-based program used to locate bacterial genes with 99% sensitivity (1). Glimmer identifies coding sequences using interpolated Markov models (IMMs), which make predictions based on a linear combination of
-                probabilities from oligomers of varying lengths. In general, longer oligomers have higher predictive value if sufficient data is available. Glimmer uses Markov models from the 1st through 8th orders and assesses which order to use based on oligomer frequency, giving a higher weight to frequently occurring oligomers. Glimmer uses longer oligomers when possible and creates IMMs for the possible reading frames, which are then used to score orfs and determine coding sequences. Glimmer’s use of IMM is advantageous over other programs, such as GeneMark, which uses a fixed-order Markov model. GenMark uses a 5th-order Markov model, predicting nucleotides based on the five previous ones, and may result in unreliable predictions if the 5mer does not frequently occur (2).</p>
+            <p id="justify">Glimmer (Gene Locator and Interpolated Markov ModelER) is a Unix-based program used to locate bacterial genes with 99% sensitivity (1). Glimmer identifies coding sequences using interpolated Markov models (IMMs), which make predictions based on a linear combination of probabilities from oligomers of varying lengths. In general, longer oligomers have higher predictive value if sufficient data is available. Glimmer uses Markov models from the 1st through 8th orders and assesses which order to use based on oligomer frequency, giving a higher weight to frequently occurring oligomers. Glimmer uses longer oligomers when possible and creates IMMs for the possible reading frames, which are then used to score orfs and determine coding sequences. Glimmer&#39;s use of IMM is advantageous over other programs, such as GeneMark, which uses a fixed-order Markov model. GenMark uses a 5th-order Markov model, predicting nucleotides based on the five previous ones, and may result in unreliable predictions if the 5mer does not frequently occur (2).</p>
 
                 <p>The Glimmer3 system was downloaded, and the file was decompressed using the following command: tar xzf glimmer302b.tar.gz</p>
 
@@ -34,24 +33,99 @@
 
                 <p><strong>Commands used to run glimmer3</strong></p>
            <pre>
-                    <code>
-                        long-orfs -n -t 1.15 AB011549_seq.fasta AB011549_seq.longorfs
+                    <code>long-orfs -n -t 1.15 AB011549_seq.fasta AB011549_seq.longorfs
                     </code>
                 </pre>
                     <img src="imgs/cgi_img3.png">
                     <br/><br/>
                     <pre>
-                    <code>extract -t AB011549_seq.fasta AB011549_seq.longorfs > AB011549_seq.train</code>
-                    <code>build-icm -r AB011549_seq.icm < AB011549_seq.train</code>
+                    <code>extract -t AB011549_seq.fasta AB011549_seq.longorfs &#62; AB011549_seq.train</code>
+                    <br/>
+                    <code>build-icm -r AB011549_seq.icm &#60; AB011549_seq.train</code>
+                    <br/>
                     <code>glimmer3 -o50 -g110 -t30 AB011549_seq.fasta AB011549_seq.icm AB011549_seq</code>
                     </pre>
                     <br/>
                     <img src="imgs/cgi_img4.png">
+                    <br/>
+                    <br/>
+
                     <pre>
-                        <code>
-                            extract -t AB011549_seq.fasta AB011549_seq.predict > AB011549_seq.glimmer
-                        </code>
+                        <code>extract -t AB011549_seq.fasta AB011549_seq.predict &#62; AB011549_seq.glimmer</code>
                     </pre>
+
+                    <h4>Explanation</h4>
+                    <p><strong>Command 1: </strong><code>long-orfs -n -t 1.15 AB011549_seq.fasta AB011549_seq.longorfs</code></p>
+
+                    <p>The <strong>long-orfs </strong>command reads a DNA sequence from a file and provides the coordinates of the long, non-overlapping open reading frames using an amino-acid distribution model. The output can be saved to a separate file or printed to the console. The orfs in the longorfs file are likely to contain genes and can be used as a training set for the build-icm program. The <strong>AB011549_seq.fasta </strong>was used for this prediction.</p>
+
+                    <p>It is used as <code>long-orfs [options] &#60;sequence-file&#62; &#60;output-file&#62;</code></p>
+                    <em>(“-” instead of &#60;output-file&#62; for standard output)</em>
+
+                    <p><u>Parameters:</u><br/>
+                       <strong>-n (--no_header):</strong> Does not include headers in the output <br/> 
+                       <strong>-t 1.15 (--cutoff &#60;x&#62;):</strong> Only genes with entropy distance score less than 1.15 will be considered
+                    </p>
+
+                    <p>Output (first ten rows; a total of 42 orfs were identified): <strong>AB011549_seq.longorfs</strong>
+                        <img src="imgs/cgi_img5.png">
+                    </p>
+
+                    <p><strong>Command 2: </strong><code>extract -t AB011549_seq.fasta AB011549_seq.longorfs &#62; AB011549_seq.train</code></p>
+
+                    <p>The <strong>extract </strong>program reads a DNA sequence from a file and takes coordinates to output a file containing FASTA sequences of the specified regions.</p>
+
+                    <p>It is used as <code>extract [options] &#60;sequence-file&#62; &#60;coords&#62;</code></p>
+
+                    <p><u>Parameters:</u><br/>
+                       <strong>-t (--nostop):</strong> Omit the last 3 characters of each output string<br/> 
+                    </p>
+
+                    <p>Output: <strong>AB011549_seq.train</strong>
+                        <img src="imgs/cgi_img6.png">
+                    </p>
+
+                    <p><strong>Command 3: </strong><code>build-icm -r AB011549_seq.icm &#60; AB011549_seq.train</code></p>
+
+                    <p>The <strong> build-icm </strong> program constructs a probability model called interpolated context model (ICM) from a set of sequences.</p>
+
+                    <p>It is used as <code>build-icm [options] output_file &#60; input_file</code></p>
+
+                    <p><u>Parameters:</u><br/>
+                       <strong>-r (--reverse):</strong> Use the reverse of input strings to build the ICM model.<br/> 
+                    </p>
+
+                    <p>Output: <strong>AB011549_seq.icm</strong>
+                        <img src="imgs/cgi_img7.png">
+                    </p>
+
+                    <p><b>Command 4: </b><code>glimmer3 -o50 -g110 -t30 AB011549_seq.fasta AB011549_seq.icm AB011549_seq</code></p>
+
+                    <p>The <b>glimmer3 </b>program makes gene predictions based on DNA sequences and the ICM model.</p>
+
+                    <p>It is used as <code>glimmer3 [options] &#60;sequence-file&#62; &#60;icm-file&#62; &#60;tag&#62;</code></p>
+                    <em>&#60;tag&#62; is used to name two output files: <b>tag.detail</b> and <b>tag.predict</b></em>
+
+                    <p><u>Parameters:</u><br/>
+                        <b>-o50 (--max_olap &#60;n&#62;):</b> Set maximum overlap length to 50.<br/> 
+                        <b>-g110 (--gene_len &#60;n&#62;):</b> Set minimum gene length to 110.<br/> 
+                        <b>-t30 (--threshold &#60;n&#62;):</b> Set threshold score for calling as gene to 30.<br/> 
+                     </p>
+
+                     <p>Output (first ten rows): <b>AB011549_seq.predict</b>
+                        <img src="imgs/cgi_img8.png">
+                    </p>
+
+                    <p>Output: <b>AB011549_seq.detail</b></p>
+
+                    <p><strong>Command 5: </strong><code>extract -t AB011549_seq.fasta AB011549_seq.predict &#62; AB011549_seq.glimmer</code></p>
+
+                    <p>Output: <b>AB011549_seq.glimmer</b></p>
+
+
+
+
+                    
                     
              
 
