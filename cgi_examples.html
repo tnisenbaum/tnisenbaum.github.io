@@ -166,6 +166,27 @@
 
                     <img src="imgs/cgi_img14.png">
 
+                    <h4>Variant Associations</h4>
+                   <p>Enter a gene name and select one of the six cancer types:<i>Breast Carcinoma, Colorectal Carcinoma, Liver Carcinoma, Non-Small Cell Lung Carcinoma, Prostate Carcinoma, and Renal Cell Carcinoma</i></p>
+
+                    <img src="imgs/cgi_img15.png">
+                    <img src="imgs/cgi_img16.png">
+                    <img src="imgs/cgi_img17.png">
+
+                    <h4>Drug Interactions</h4>
+                    <p>Enter a gene name to obtain gene-drug interactions from three sources: Cancer Commons, My Cancer Genome, and My Cancer Genome Clinical Trial</p>
+
+                    <img src="imgs/cgi_img18.png">
+                    <img src="imgs/cgi_img19.png">
+
+                    <h4>Tool Description</h4>
+                    <ol>
+                        <li><b>SQL Relational Database - </b>Stores information about genes and variants associated with cancer and drug-gene interactions. Information about the former was obtained from the DisGeNET SQLite file, which consists of eight tables containing information about genes, variants, and disease attributes and how they relate to one another. Table 1, as referenced above, consists of a combination of data from various tables. Information about drug-gene interactions was obtained from raw data files in DGIdb. </li>
+                        <li><b>Python Computer Gateway Interface (CGI) Programming - </b>Connects to the database and queries the data based on user input from an HTML form. The CGI script will process and store the results in the two tables referenced above. The results will be returned in a JSON structure, which will be displayed to the user.</li>
+                        <li><b>Javascript and JQuery - </b>The JSON data structure will be read and parsed by Javascript, and the resulting tables will be generated to be displayed to the user. The resulting page will be styled with CSS.</li>
+                    </ol>
+
+
 
 
 
