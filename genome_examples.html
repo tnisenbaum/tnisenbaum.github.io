@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Genome Analysis</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <h4 id="name">THAIS NISENBAUM</h4>
+    <div class="genomeEx">
+        <h1>Genome Analysis</h1>
+        <hr>
+        <h2>Gene Prediction and Annotation</h2>
+        <h3>Prokaryotic Gene Prediction and Annotation</h3>
+
+        <p id="justify">Early annotations determined coding regions of prokaryotic genomic DNA based on the longest open reading frame (ORF), as there are usually no introns. However, multiple potential start codons pose a difficulty to the process. Gene prediction tools identify the most likely CDS region, but as they are designed to predict DNA coding DNA sequences, RNA sequences are difficult to predict. RNA-seq provides information on gene expression, and transcription start/stop sites. Transcript data is used to complement gene prediction tools and provide a complete annotation of mRNA, ncRNA, and CDS locations.</p>
+
+        <h4>ORF Finder</h4>
+        <p>Searches for open reading frames (ORFs) and returns a range of ORF locations (strand, frame, start, stop) and translated protein.
+            <a href="https://www.ncbi.nlm.nih.gov/orffinder/">ORF Finder Documentation</a>
+        </p>
+
+        <p id="justify">The three longest ORFs of a <i>Bacillus subtilis</i> genomic sequence were identified using ORF Finder. The picture below from the Open Reading Frame Viwer demonstrates ORF1 (reading frame 1), ORF2 (reading frame 1), and ORF7 (reading frame 3).</p>
+
+        <img src="imgs/orffinder_img1.png">
+
+        <h4>Glimmer</h4>
+        <p>Unix-based program used to locate bacterial genes. The program locates long ORFs to identify CDS locations and returns information on the strand and reading frame.
+            <a href="http://ccb.jhu.edu/software/glimmer/index.shtml">Glimmer Documentation</a>
+        </p>
+
+        <p id="justify"><b>Glimmer</b> was used to analyze part of a contig from a strain of <i>Halanaerobium</i> (halan.fasta). The genome is incomplete and was submitted by a group at the University of Pittsburgh on September 6, 2016. Some CDS regions have been annotated by NCBI Prokaryotic Pipeline Analysis. No mRNAs have been annotated. The complete genome of <i>Halanaerobium praevalens</i>, a related species isolated from the Great Salt Lake sediment in Utah, was used as a training set.</p>
+
+        <img src="imgs/glimmer_img1.png">
+
+        <p>Commands used:</p>
+
+        <pre>
+            <code>long-orfs -n -t 1.15 hprev_genome.fasta hprev.longorfs</code><br/>
+            <code>extract -t hprev_genome.fasta hprev.longorfs &#62; hprev.train </code><br/>
+            <code>build-icm -r hprev.icm &#60; hprev.train </code><br/>
+            <code>glimmer3 -o50 -g110 -t30 halan.fasta hprev.icm halan </code><br/>
+            <code>extract -t halan.fasta halan.predict &#62; halan.glimmer</code>
+        </pre>
+        <br/>
+
+        <img src="imgs/glimmer_img2.png">
+
+        <p>Below is the DNA sequence of ORF1 in FASTA format, according to the halan.glimmer file.</p>
+        <img src="imgs/glimmer_img3.png">
+
+        <p>Based on the Glimmer results, the predicted CDS locations of the halan.fasta file is as follows:<br/>
+            CDS 1: 171 - 350, CDS 2: 343 - 1626, CDS 3: 1629 - 4733, CDS 4: 5786 - 4971</p>
+    
+    </div>
+  </body>
+</html>
+
