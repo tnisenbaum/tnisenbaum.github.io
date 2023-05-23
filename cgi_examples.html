@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    </style>
+    <title>Python</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<!DOCTYPE html>
+<html>
+  <body>
+    <h4>THAIS NISENBAUM</h4>
+    <div class="cgiEx">
+        <h1>Python Computer Gateway Interface (CGI) Programming</h1>
+        <hr>
+        <h2>HTML Template</h2>
+        <h3>GenBank Reference Annotation vs. Glimmer3</h3>
+        <p>Glimmer was used to predict the genes of a plasmid of the model organism <i>Escherichia coli</i> O157:H7 str. Sakai plasmid pO157 DNA, and the results were then compared with the annotations from GenBank. A CGI script was used to read both the GenBank (reference) annotation and predicted output from Glimmer, and the results were populated in an HTML5-compliant template.</p>
+            <p>The output includes summary information at the top, including the count of genes in the reference annotation, the count of predicted genes, the count of genes with exact matching coordinates between reference and prediction (5' and 3' agreement), the count of genes with 5' agreement but 3' disagreement, the count of genes with 5' disagreement but 3' agreement, and the count of genes predicted with no overlap to a reference gene. Additionally, a table is displayed showing all gene coordinates of the reference annotation and the corresponding (overlapping) predicted coordinates. Attributes of 'agrees' or 'disagrees’ are applied when compared to the reference coordinates, and a consensus field is generated.</p>
+
+            <i>Escherichia coli</i> O157:H7 str. Sakai plasmid pO157 DNA, complete sequence: <a href="https://www.ncbi.nlm.nih.gov/nuccore/AB011549.2">AB011549.2</a>
+
+            <img src="imgs/cgi_img1.png">
+
+            <p>Glimmer (Gene Locator and Interpolated Markov ModelER) is a Unix-based program used to locate bacterial genes with 99% sensitivity (1). Glimmer identifies coding sequences using interpolated Markov models (IMMs), which make predictions based on a linear combination of
+                probabilities from oligomers of varying lengths. In general, longer oligomers have higher predictive value if sufficient data is available. Glimmer uses Markov models from the 1st through 8th orders and assesses which order to use based on oligomer frequency, giving a higher weight to frequently occurring oligomers. Glimmer uses longer oligomers when possible and creates IMMs for the possible reading frames, which are then used to score orfs and determine coding sequences. Glimmer’s use of IMM is advantageous over other programs, such as GeneMark, which uses a fixed-order Markov model. GenMark uses a 5th-order Markov model, predicting nucleotides based on the five previous ones, and may result in unreliable predictions if the 5mer does not frequently occur (2).</p>
+
+                <p>The Glimmer3 system was downloaded, and the file was decompressed using the following command: tar xzf glimmer302b.tar.gz</p>
+
+                <p>Running the command above creates a directory called <strong>glimmer3.02</strong></p>
+
+                <img src="imgs/cgi_img2.png">
+                The <strong>glim302notes.pdf </strong>file contains the documentation for running Glimmer.
+
+                <p><strong>Commands used to run glimmer3</strong></p>
+           <pre>
+                    <code>
+                        long-orfs -n -t 1.15 AB011549_seq.fasta AB011549_seq.longorfs
+                    </code>
+                </pre>
+                    <img src="imgs/cgi_img3.png">
+                    <br/><br/>
+                    <pre>
+                    <code>extract -t AB011549_seq.fasta AB011549_seq.longorfs > AB011549_seq.train</code>
+                    <code>build-icm -r AB011549_seq.icm < AB011549_seq.train</code>
+                    <code>glimmer3 -o50 -g110 -t30 AB011549_seq.fasta AB011549_seq.icm AB011549_seq</code>
+                    </pre>
+                    <br/>
+                    <img src="imgs/cgi_img4.png">
+                    <pre>
+                        <code>
+                            extract -t AB011549_seq.fasta AB011549_seq.predict > AB011549_seq.glimmer
+                        </code>
+                    </pre>
+                    
+             
+
+
+
+
+
+ </div>
+
+</body>
+</html>
