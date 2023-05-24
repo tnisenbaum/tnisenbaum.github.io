@@ -25,7 +25,7 @@
         <img src="imgs/orffinder_img1.png">
 
         <h4>Glimmer</h4>
-        <p>Unix-based program used to locate bacterial genes. The program locates long ORFs to identify CDS locations and returns information on the strand and reading frame.
+        <p>Glimmer is a Unix-based program used to locate bacterial genes. The program locates long ORFs to identify CDS locations and returns information on the strand and reading frame.
             <a href="http://ccb.jhu.edu/software/glimmer/index.shtml">Glimmer Documentation</a>
         </p>
 
@@ -51,6 +51,46 @@
 
         <p>Based on the Glimmer results, the predicted CDS locations of the halan.fasta file is as follows:<br/>
             CDS 1: 171 - 350, CDS 2: 343 - 1626, CDS 3: 1629 - 4733, CDS 4: 5786 - 4971</p>
+
+        <h4>FGENESB</h4>
+
+        <p id="justify">FGENESB is the annotation of bacterial genomes based on the Markov chain model. The program identifies CDS locations, promoters, operons, translation sites, and termination sites. The output contains the strand, reading frame, and information on which mRNA includes those particular coding genes.
+            <a href="http://www.softberry.com/berry.phtml?topic=fgenesb&group=programs&subgroup=gfindb">FGENESB Documentation</a>
+        </p>
+
+        <p>Using the same sequence as the Glimmer example above, FGENESB was run, and the results between the two gene-prediction tools were compared.</p>
+
+        <p>FGENESB Output:<br/>
+            <em>Training set: bacterial generic</em>
+        </p>
+
+        <img src="imgs/fgenesb_img1.png">
+
+        <p>Based on the FGENESB prediction, there are two mRNA molecules. The first mRNA is located on the + strand and consists of 3 CDSs. The second mRNA is located on the - strand and consists of 1 CDS.</p>
+         <p>Both FGENESB and Glimmer predicted 4 CDSs, 3 on the + strand and 1 on the - strand. The locations differ only on the start position of the first CDS, where Glimmer predicted it to be located between positions 171 and 350, and FGENESB predicted it to be located between positions 3 and 350. All other predicted locations are the same between the two prediction tools.</p>
+
+         <h4>BPROM</h4>
+
+         <p>BPROM Identifies potential &#963;70 promoters with Linear Discrimination Function with 80%
+            accuracy.</p>
+
+        <p>Using the DNA sequence from <i>Lactococcus lactis</i>, FGENESB was used to find the location of two genes on an operon, then BPROM was used to find the locations of the -35 and -10 signals.</p>
+
+        <p>FGENESB predicted the CDS locations of the first gene are between positions 287 and 553, and the CDS locations of the second gene are between positions 556 and 2283. According to BPROM, the most appropriate -10 signal is at position 210, and the -35 signal is at position 190.</p>
+
+        <img src="imgs/fgenesb_img2.png">
+        <img src="imgs/bprom_img1.png">
+
+
+        <h3>Eukaryotic Gene Prediction</h3>
+
+        <p id="justify">Expression-based gene prediction tools align cDNA and protein sequences to precisely located coding regions. Single genome de novo gene prediction tools are able to locate genes where expression-based methods were unable to, analyzing gDNA to predict exon locations.</p>
+
+        <h4>Splign</h4>
+        <p>Splign aligns cDNA to gDNA to identify splice-junctions, frameshifts, and alternative gene models. Splign supports alignments from different species and produces an output containing a complete gene model. 
+            <a href="https://www.ncbi.nlm.nih.gov/sutils/splign/splign.cgi?textpage=online&level=form">Splign</a>
+        </p>
+
     
     </div>
   </body>
