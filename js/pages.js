@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
       case "resume_tab":
         window.location.href = "files/Thais Nisenbaum_Resume.pdf";
         break;
-        case "samples_tab":
+      case "samples_tab":
         window.location.href = "samples.html";
         break;
     }
