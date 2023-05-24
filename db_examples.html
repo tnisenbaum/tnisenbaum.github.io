@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Genomic Databases and Tools</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <h4 id="name">THAIS NISENBAUM</h4>
+    <div class="dbEx">
+        <h1>Genomic Databases and Tools</h1>
+        <hr>
+        <h2>UCSC Genome Browser</h2>
+        <p id="justify">UCSC is primarily a eukaryotic genome browser containing data from 97 eukaryotic genomes. The database includes assembly data, precomputed comparative genomic data, mRNA, EST, RefSeq gene alignments, and links to NCBI Map Viewer and Ensembl. The <b>UCSC Table Browser</b> allows for the download of data from UCSC in a tab-delimited format.</p>
+
+        <p><b>Example 1: </b>The human TUBB3 gene was located in the UCSC Genome Browser (hg38), and the regulatory regions were analyzed based on the ENCODE regulation tracks.</p>
+
+        <p>
+            NM_001197181.2 (tubulin beta 3 class III, transcript variant 2) - The double peaks seen in the layered H3K27Ac and H3K4Me3 tracks are consistent with the promoter region. Additionally, there appears to be a regulatory element, such as an enhancer, upstream of the promoter, as denoted by the broad peaks in the layered H3K4Me1 and H3K27Ac.<br/>
+            NM_006086.4 (tubulin beta 3 class III, transcript variant 1) - Enrichment in the layered H3K4Me3 track is associated with the promoter.</p>
+
+            <img src="imgs/ucsc_img1.png">
+
+            <p id-="justify">At the same locus as above, the Encode tracks were configured to only show data from the HUVEC cell line. HUVEC refers to human umbilical vein endothelial cells. The TUBB3 gene appears to be expressed in the HUVEC cell line. Similar to the answer above, the double peaks in H3K27Ac and H3K4Me3 are associated with the promoter region. Enrichment in H3K4Me3 is found near promoters.</p>
+
+            <img src="imgs/ucsc_img2.png">
+
+            <h2>Galaxy</h2>
+            <p>Galaxy is an open-source framework that enables scientific workflows by using computational tools and information from databases.</p>
+
+            <p id="justify">Galaxy was used to query for hg38 genes in ENCODE region ENm008 (chr16:1-500000) from the <b>UCSC Main Table Browser at UCSC</b>. The data was exported in <b>BED</b> format. Using the <i>Genes and Gene Predictions</i> group and <i>GENCODE V43</i> track, <b>198 genes were identified.</b>
+            The number of genes located on the plus and minus strands was determined using the <i>Group</i> tool and <i>Count</i> operation in Galaxy. There are 111 genes on the (+) strand and 87 genes on the (-) strand.</p>
+
+            <img src="imgs/galaxy_img1.png">
+
+            <p>Below is a histogram generated in Galaxy demonstrating the number of exons in each gene</p>
+
+            <img src="imgs/galaxy_img2.png">
+
+            <h2>Integrative Genomics Viewer (IGV)</h2>
+            <p>IGV is an interactive tool used for the visualization of genomic data. It is a collaboration between MIT and Harvard and is available through the Broad Institute.</p>
+
+            <p><b>Example 1: </b>The fourth exon of the EPHX1 gene was analyzed in the HG00096 exome sequence. Using IGV for the hg19 genome, the datasets from dbSNP 1.4.7 and the HG00096 exome sequencing track from the 1000 Genomes project were loaded. There are <b>44 SNPs overlapping this exon</b>, and this individual appears to be heterozygous at rs2234922 (A: 57 (63%), G:34 (37%))</p>
+
+            <img src="imgs/igv_img1.png">
+
+            <p><b>Example 2: </b>The HIV-1 genome was opened in IGV, and a zero-based BED file was created with the following intervals
+            <ol>
+                <li>The gag gene located at positions 336 through 1838.</li>
+                <li>The vif gene located at positions 4587 through 5165.</li>
+                <li>A Gag protein potential epitope located at amino acid positions 271 through 285 of the Gag protein. The amino acid sequence is NKIVRMYSPTSILDI.</li>
+            </ol>
+            </p>
+
+            <p>BED file created 
+            <img src="imgs/igv_img2.png"></p>
+
+            <p>Display of all three intervals in IGV
+            <img src="imgs/igv_img3.png"></p>
+
+            <p>Zoomed-in screenshot showing the epitope and the corresponding amino acid sequence
+                <img src="imgs/igv_img4.png"></p>
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
+
