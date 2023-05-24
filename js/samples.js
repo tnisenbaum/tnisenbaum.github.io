@@ -17,6 +17,9 @@ jQuery(document).ready(function () {
       case "genome_examples":
         window.location.href = "genome_examples.html";
         break;
+        case "db_examples":
+          window.location.href = "db_examples.html";
+          break;
       case "files_examples":
         window.location.href = "files_examples.html";
         break;
