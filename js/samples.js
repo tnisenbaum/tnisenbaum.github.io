@@ -26,8 +26,8 @@ jQuery(document).ready(function () {
       case "ngs_examples":
         window.location.href = "ngs_examples.html";
         break;
-      case "manuscripts_examples":
-        window.location.href = "manuscripts_examples.html";
+      case "manuscript_examples":
+        window.location.href = "manuscript_examples.html";
         break;
     }
   });
