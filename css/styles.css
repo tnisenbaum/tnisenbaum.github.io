@@ -57,7 +57,8 @@ ul {
 .sqlEx,
 .rEx,
 .cgiEx,
-.genomeEx{
+.genomeEx,
+.dbEx{
   margin: auto;
   width: 60%;
   padding: 10px;
