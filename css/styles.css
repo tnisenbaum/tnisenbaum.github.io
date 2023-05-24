@@ -59,7 +59,8 @@ ul {
 .cgiEx,
 .genomeEx,
 .dbEx,
-.filesEx{
+.filesEx,
+.ngsEx {
   margin: auto;
   width: 60%;
   padding: 10px;
