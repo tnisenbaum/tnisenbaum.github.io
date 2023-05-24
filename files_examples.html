@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BED and WIG Files</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <h4 id="name">THAIS NISENBAUM</h4>
+    <div class="filesEx">
+    <h1>BED and WIG Files</h1>
+    <hr>
+    <p><b>BED (Browser Extensible Data) Files: </b>Stores information about genomic intervals i.e., exons (contains start and end positions)</p>
+    <p><b>WIG (“Wiggle”) Files: </b>Stores information about each genomic location
+        i.e., chromatin modification data, as regions would have different methylation levels
+        </p>
+
+    <p>Both file types can be displayed genome browsers.</p>
+
+    <p><b>Example 1: </b>Three ENCODE tracks from region chr5:134000000-134250000 of hg38 were retrieved using the UCSC Table Browser
+    <ul>
+        <li>DNase HS (hypersensitivity), table HUVEC Pk (output a BED file)</li>
+        <li>Layered H3K4me3, HUVEC Cells (output a WIG (data points) file)</li>
+        <li>Layered H3K4me1, HUVEC Cells (output a BED file)</li>
+    </ul></p>
+
+    <p>Output demonstrating the TCF7 gene and the 8 closest DHS regions in IGV
+        <img src="imgs/igv_img5.png">
+    </p>
+
+    <p>Based on the H3K4me3 track, the TCF gene appears to be expressed in HUVEC cells, as peaks in H3K4me3 are associated with the promoter region of the gene.</p>
+
+    <h2>BEDtools</h2>
+    <p>BEDtools are tools used for genetic data manipulation and include functions such as joining, subtracting, and intersecting files. BEDtools are available through Galaxy and can be used from the command line.</p>
+
+    <h3>Analysis of Overlapping Regions</h3>
+    <p><b>Example 1:  BEDtools - Interval Manipulation in Galaxy</b><br/>
+        BED files containing exons and CpG regions, respectively, in chromosomal region 5q31, were analyzed in Galaxy for overlapping regions between the two genomic features.
+    </p>
+
+    <p><b>Results: </b>542 unique exons intersect a CpG region, and 4,296 unique exons do not intersect a CpG region 200 unique CpG regions intersect an exon, and 45 unique CpG regions do not intersect exons</p>
+
+    <p><b>Galaxy Workflow</b>
+    <img src="imgs/galaxy_img3.png"></p>
+
+    <p><b>Example 2: BEDtools command-line</b><br/>
+        BED files containing active H3K4me3 states and coding exons, respectively, in chromosome 20, were analyzed using <i>bedtools intersect</i> on the command line for overlapping regions between the two genomic features.
+    </p>
+
+    <p><b>Results</b></p>
+    <p>
+        10 unique H3K4me3 regions intersect a coding exon
+    <pre>
+        <code>bedtools intersect -u -a hs_chr20_H3K4me3.bed -b hs_chr20_refseq.bed</code>
+    </pre>
+</p>
+<img src="imgs/bedtools_img1.png">
+
+<p>
+    245 unique H3K4me3 regions do not intersect a coding exon
+<pre>
+    <code>bedtools intersect -v -a hs_chr20_H3K4me3.bed -b hs_chr20_refseq.bed</code>
+</pre>
+</p>
+<em>(first few rows)</em>
+<img src="imgs/bedtools_img2.png">
+
+
+
+
+</div>
+  </body>
+</html>
