@@ -3,7 +3,7 @@ jQuery(document).ready(function () {
     e.preventDefault();
     switch (this.parentNode.id) {
       case "resume_tab":
-        window.location.href = "resume.html";
+        window.location.href = "files/Thais Nisenbaum_Resume.pdf";
         break;
         case "samples_tab":
         window.location.href = "samples.html";
