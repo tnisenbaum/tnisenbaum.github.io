@@ -58,7 +58,8 @@ ul {
 .rEx,
 .cgiEx,
 .genomeEx,
-.dbEx{
+.dbEx,
+.filesEx{
   margin: auto;
   width: 60%;
   padding: 10px;
